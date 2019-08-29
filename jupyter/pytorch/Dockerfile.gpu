@@ -1,0 +1,12 @@
+FROM miaortizma/jupyter:10.0-devel-cudnn7-ubuntu18.04
+
+# Install Pytorch
+
+RUN pip install \
+    'torch' \
+    'torch-vision' \
+    'nltk' \
+    'opencv-python' && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER  
+

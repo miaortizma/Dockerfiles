@@ -1,0 +1,9 @@
+FROM miaortizma/jupyter:10.0-devel-cudnn7-ubuntu18.04
+
+RUN pip install \
+    'tensorflow-gpu==2.0.0-rc0' \
+    'opencv-python' \
+    'nltk' && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
+    
