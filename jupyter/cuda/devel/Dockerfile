@@ -1,4 +1,4 @@
-FROM runtime
+FROM miaortizma/jupyter:runtime-gpu
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
 USER root
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         cuda-nvml-dev-$CUDA_PKG_VERSION \
         cuda-minimal-build-$CUDA_PKG_VERSION \
         cuda-command-line-tools-$CUDA_PKG_VERSION \
-        libnccl-dev=$NCCL_VERSION-1+cuda10.0 && \
+        libnccl-dev=$NCCL_VERSION-1+cuda10.1 && \
     rm -rf /var/lib/apt/lists/*
 
 ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs

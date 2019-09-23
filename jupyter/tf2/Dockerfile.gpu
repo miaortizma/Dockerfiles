@@ -1,4 +1,4 @@
-FROM miaortizma/jupyter:10.0-devel-cudnn7-ubuntu18.04
+FROM miaortizma/jupyter:base-gpu
 
 RUN pip install \
     'tensorflow-gpu==2.0.0-rc0' \

@@ -9,7 +9,8 @@ RUN conda install --yes \
     'theano' \
     'pygpu' \
     'matplotlib' \
-    'mkl-service' && \
+    'mkl-service' \
+    'keras' && \
     conda clean --all -f -y && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER

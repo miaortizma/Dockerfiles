@@ -15,13 +15,6 @@ c.NotebookApp.open_browser = False
 # https://github.com/jupyter/notebook/issues/3130
 c.FileContentsManager.delete_to_trash = False
 
-# shutdown the server after no activity for an hour
-c.NotebookApp.shutdown_no_activity_timeout = 60 * 60
-# shutdown kernels after no activity for 20 minutes
-c.MappingKernelManager.cull_idle_timeout = 20 * 60
-# check for idle kernels every two minutes
-c.MappingKernelManager.cull_interval = 2 * 60
-
 # Generate a self-signed certificate
 if 'GEN_CERT' in os.environ:
     dir_name = jupyter_data_dir()
@@ -59,4 +52,12 @@ distinguished_name = req_distinguished_name
 # Change default umask for all subprocesses of the notebook server if set in
 # the environment
 if 'NB_UMASK' in os.environ:
-os.umask(int(os.environ['NB_UMASK'], 8))
+    os.umask(int(os.environ['NB_UMASK'], 8))\
+
+# shutdown the server after no activity for an hour
+c.NotebookApp.shutdown_no_activity_timeout = 60 * 60
+# shutdown kernels after no activity for 30 minutes
+c.MappingKernelManager.cull_idle_timeout = 60 * 60
+# check for idle kernels every two minutes
+c.MappingKernelManager.cull_interval = 2 * 60
+
