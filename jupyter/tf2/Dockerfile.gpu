@@ -1,7 +1,7 @@
 FROM miaortizma/jupyter:base-gpu
 
 RUN pip install \
-    'tensorflow-gpu==2.0.0-rc0' \
+    'tensorflow-gpu' \
     'opencv-python' \
     'nltk' && \
     fix-permissions $CONDA_DIR && \

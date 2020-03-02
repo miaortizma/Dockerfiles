@@ -1,0 +1,8 @@
+FROM miaortizma/jupyter:10.0-devel-cudnn7-ubuntu18.04
+
+COPY jupyter_notebook_config.py /etc/jupyter/
+
+RUN pip install \
+  'tensorflow-gpu' && \
+  fix-permissions $CONDA_DIR && \
+  fix-permissions /home/$NB_USER
